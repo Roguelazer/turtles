@@ -32,11 +32,12 @@ def test_hashable():
 
 
 def test_iterable():
-    some_turtles = list(itertools.islice(iter(turtle), 0, 3))
+    i = iter(turtle)
+    some_turtles = list(itertools.islice(i, 0, 3))
     assert [repr(t) for t in some_turtles] == [
-        'next(turtle)',
-        'next(next(turtle))',
-        'next(next(next(turtle)))',
+        'turtle[0]',
+        'turtle[1]',
+        'turtle[2]',
     ]
 
 

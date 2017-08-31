@@ -98,10 +98,10 @@ class Turtle(object):
         return None
 
     def __iter__(self):
-        obj = self
+        i = 0
         while True:
-            obj = Turtle('next({0})'.format(obj))
-            yield obj
+            yield self[i]
+            i += 1
 
 
 turtle = Turtle('turtle')
